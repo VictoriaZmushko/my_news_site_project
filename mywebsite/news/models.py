@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-
+# Create your models here.
 class Reporter(models.Model):
     full_name = models.CharField(max_length=70)
 
@@ -15,7 +15,8 @@ class Article(models.Model):
     content = models.TextField()
     reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ["-publish"]
+
     def __str__(self):
         return self.headline
-
-# Create your models here.
