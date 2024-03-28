@@ -5,9 +5,9 @@ from django.shortcuts import get_object_or_404
 from .models import Article
 
 
-def article_list(request, id):
+def article_detail(request, id):
     article = get_object_or_404(article, id=id)
-    return render(request, "news/article/list.html", {"article": article})
+    return render(request, "news/article/detail.html", {"article": article})
 
 
 def article_list(request):
